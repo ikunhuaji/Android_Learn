@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">1145141919810</string>
+    <dimen name="text_size">20sp</dimen>
+    <dimen name="radio_pad_size">8dp</dimen>
+</resources><!--在文件中引用 text_size 要用 @dimen/text_size-->

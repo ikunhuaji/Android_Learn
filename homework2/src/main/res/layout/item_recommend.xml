@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/iv_recommend_image"
+        android:layout_gravity="center"
+        tools:src="@drawable/huawei"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_recommend_name"
+        android:textSize="20sp"
+        android:gravity="left"
+        android:paddingLeft="10dp"
+        tools:text="华为"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_recommend_intro"
+        android:textSize="15sp"
+        android:gravity="left"
+        android:paddingLeft="10dp"
+        android:textColor="@drawable/gray"
+        tools:text="退货包运费 极速退款" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_recommend_price"
+        android:textSize="25sp"
+        android:gravity="left"
+        android:paddingLeft="10dp"
+        android:textColor="@drawable/red"
+        tools:text="￥5999"/>
+
+</LinearLayout>

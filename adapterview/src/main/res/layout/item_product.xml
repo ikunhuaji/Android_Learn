@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_product_name"
+        android:textSize="20sp"
+        tools:text="华为"
+        android:gravity="center_horizontal"
+        />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/iv_product_image"
+        android:layout_gravity="center"
+        tools:src="@drawable/huawei"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_product_price"
+            android:layout_weight="2"
+            tools:text="￥6299.00"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_add_cart"
+            android:layout_weight="4"
+            android:text="添加购物车"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

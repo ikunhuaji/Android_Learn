@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+<!-- layout_centerInParent 正中央   -->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:text="正中央"-->
+<!--        android:textSize="20sp"-->
+<!--        android:id="@+id/tv_center"/>-->
+
+<!--  layout_centerHorizontal  水平中央 -->
+<!--  layout_centerVertical 垂直中央  -->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="中央左边"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_toLeftOf="@+id/tv_center"-->
+<!--        android:id="@+id/tv_celeft"/>-->
+
+<!--    layout_below    在_下边    -->
+<!--    layout_alignLeft    在_左对齐   -->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="中央下方左对齐"-->
+<!--        android:textSize="20sp"-->
+<!--        android:id="@+id/sss"-->
+<!--        android:layout_alignLeft="@+id/tv_center"-->
+<!--        android:layout_below="@+id/tv_center"/>-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="左下角"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_alignLeft="@+id/tv_center"-->
+<!--        android:layout_below="@+id/tv_center"/>-->
+
+
+<!--    layout_alignBaseline 与 _ 中轴线对其 -->
+
+<!--<TextView-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_below="@+id/sss"-->
+<!--    android:layout_alignParentRight="true"-->
+<!--    android:layout_marginRight="30dp"-->
+<!--    android:layout_alignBaseline="@+id/sss"-->
+<!--    android:text="忘记密码"-->
+<!--    />-->
+
+</RelativeLayout>
+
+
+

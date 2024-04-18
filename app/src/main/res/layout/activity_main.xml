@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@mipmap/ikun"
+    android:id="@+id/kunkun"
+    android:orientation="vertical"><!--垂直排列-->
+<!--    padding为内部元素边距-->
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:id="@+id/title"
+        android:drawableLeft="@mipmap/user"
+        android:drawablePadding="20dp"
+        android:hint="加强晓蛇"/>
+
+
+<!--用户-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"><!--水平排列-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户："
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/edt_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:hint="请输入用户名"/>
+
+    </LinearLayout>
+<!--密码-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"><!--水平排列-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="密码："
+            android:textSize="20sp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="textPassword"
+            android:hint="请输入密码"/>
+
+    </LinearLayout>
+<!--    inputType textPassword 使输入的密码不可视-->
+<!--单选-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="性别："
+            android:textSize="20sp" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="男"
+                android:textSize="20sp"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="女"
+                android:textSize="20sp"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="只因"
+                android:textSize="20sp"/>
+        </RadioGroup>
+
+    </LinearLayout>
+<!--第一行选择-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="爱好："
+            android:textSize="20sp"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="唱"
+            android:textSize="20sp"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳"
+            android:textSize="20sp"/>
+    </LinearLayout>
+<!--第二行选择-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="爱好："
+            android:visibility="invisible"
+            android:textSize="20sp"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="rap"
+            android:textSize="20sp"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🏀"
+            android:textSize="20sp"/>
+
+
+    </LinearLayout>
+<!--注册、登录按钮-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity=""
+        android:gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/but1"
+            android:text="登录"
+            android:textSize="20sp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/but2"
+            android:layout_marginLeft="30dp"
+            android:text="注册"
+            android:textSize="20sp"/>
+    </LinearLayout>
+<!--layout_margin 为外边距-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/newpage"
+            android:layout_marginLeft="30dp"
+            android:text="跳转"
+            android:onClick="onClick"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+</LinearLayout>
