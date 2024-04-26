@@ -7,9 +7,11 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +25,9 @@ public class MenuActivity extends AppCompatActivity {
     private EditText edt_paste;
     private EditText edt_copy;
     private Button btn_popupmenu;
+
+    private final String TAG = "msg";
+    private Button btn_test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,12 +59,37 @@ public class MenuActivity extends AppCompatActivity {
             popupMenu.show();
 
         });
+
+        btn_test.setOnLongClickListener(new View.OnLongClickListener() {//长按
+            @Override
+            public boolean onLongClick(View v) {
+                Log.i(TAG,"长按");
+                return false;
+            }
+        });
+
+        btn_test.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                if(action==MotionEvent.ACTION_DOWN) {
+                    Log.i(TAG,"触摸上");
+
+                }
+                if (action==MotionEvent.ACTION_UP) {
+                    Log.i(TAG, "失去触摸");
+                }
+
+                return false;
+            }
+        });
     }
 
     private void initView() {
         edt_copy = findViewById(R.id.edt_copy);
         edt_paste = findViewById(R.id.edt_paste);
         btn_popupmenu = findViewById(R.id.btn_popupmenu);
+        btn_test = findViewById(R.id.btn_test);
     }
 
     @Override
@@ -102,5 +132,9 @@ public class MenuActivity extends AppCompatActivity {
             edt_paste.setText(cm.getPrimaryClip().getItemAt(0).getText());
         }
         return super.onContextItemSelected(item);
+    }
+
+    public  void handleClick(View view){
+        Log.i(TAG,"弹起");
     }
 }
