@@ -7,6 +7,7 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
@@ -14,12 +15,14 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.software.notification.R;
+import com.software.notification.menu.MenuActivity;
 import com.software.notification.utils.NotifyUtil;
 
 public class NotificationActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button btn_send;
     private EditText edt_message;
+    private Button jump_menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,10 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
 
         initViews();
         initEvents();
+
+        jump_menu.setOnClickListener(w->{
+            startActivity(new Intent(this, MenuActivity.class));
+        });
     }
 
     private void initEvents() {
@@ -37,6 +44,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
     private void initViews() {
         btn_send = findViewById(R.id.btn_send);
         edt_message = findViewById(R.id.edt_message);
+        jump_menu = findViewById(R.id.jump_menu);
     }
 
     @Override

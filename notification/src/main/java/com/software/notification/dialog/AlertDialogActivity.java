@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.software.notification.R;
+import com.software.notification.menu.MenuActivity;
 import com.software.notification.toast.ToastActivity;
 
 import java.util.Calendar;
@@ -28,6 +29,7 @@ public class AlertDialogActivity extends AppCompatActivity implements View.OnCli
     private TextView tv_time;
     private Button btn_custom;
     private Button btn_jump;
+    private Button jump_menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,10 @@ public class AlertDialogActivity extends AppCompatActivity implements View.OnCli
 
         initViews();
         initEvents();
+
+        jump_menu.setOnClickListener(w->{
+            startActivity(new Intent(this, MenuActivity.class));
+        });
     }
 
     private void initEvents() {
@@ -60,6 +66,8 @@ public class AlertDialogActivity extends AppCompatActivity implements View.OnCli
         btn_custom = findViewById(R.id.btn_custon);
 
         btn_jump = findViewById(R.id.btn_jump);
+
+        jump_menu = findViewById(R.id.jump_menu);
     }
 
     @Override
