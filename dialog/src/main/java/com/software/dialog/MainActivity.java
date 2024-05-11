@@ -97,10 +97,10 @@ public class MainActivity extends AppCompatActivity{
                     .setTitle("单选列表对话框")//设置对话框的标题
                     .setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
                         @Override
-                        public void onClick(DialogInterface dialog, int which) {
+                        public void onClick(DialogInterface dialog, int which) {//which传递下标
                             Toast.makeText(MainActivity.this, items[which], Toast.LENGTH_SHORT).show();
                         }
-                    })//绑定单选选项，checkeditem为默认选中的下标，为 -1 则没有选择
+                    })//绑定单选选项 默认下标 和 点击事件 ，checkeditem 为默认选中的下标，为 -1 则没有选择
                     .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity{
         btn_4.setOnClickListener(v->{
             //多选对话框
             final String items[] = {"我是选项一", "我是选项二", "我是选项三", "我是选项四"};
-            final boolean checkedItems[] = {true, false, true, false};
+            final boolean checkedItems[] = {true, false, true, false};//默认
             AlertDialog dialog = new AlertDialog.Builder(this)
                     .setIcon(R.mipmap.icon)//设置标题的图片
                     .setTitle("多选对话框")//设置对话框的标题
@@ -181,8 +181,8 @@ public class MainActivity extends AppCompatActivity{
         });
 
         btn_7.setOnClickListener(v->{
-            //半自定义对话框
-            View view = getLayoutInflater().inflate(R.layout.half_dialog_view, null);
+            //半自定义对话框，未更改 dialog 的 style
+            View view = View.inflate(this,R.layout.half_dialog_view, null);//获取自定义布局
             final EditText editText = (EditText) view.findViewById(R.id.edt_halfdialog);
             AlertDialog dialog = new AlertDialog.Builder(this)
                     .setIcon(R.mipmap.icon)//设置标题的图片
@@ -207,11 +207,15 @@ public class MainActivity extends AppCompatActivity{
 
         btn_8.setOnClickListener(v->{
             //style自定义对话框
-            Dialog dialog = new Dialog(this, R.style.NormalDialogStyle);
-            View view = View.inflate(this, R.layout.dialog_normal, null);
-            dialog.setContentView(view);
-            dialog.setCanceledOnTouchOutside(true);
+            Dialog dialog = new Dialog(this, R.style.NormalDialogStyle);//设置自定义对话框样式，取消标题、边框，设置背景透明
+            View view = View.inflate(this, R.layout.dialog_normal, null);//获取自定义布局
+            dialog.setContentView(view);//绑定布局
+            dialog.setCanceledOnTouchOutside(true);//点击外部不关闭对话框
 
+            //通过 gravity 设置底部对话框
+            dialog.getWindow().setGravity(Gravity.BOTTOM);
+
+            //通过函数获取屏幕尺寸来设置底部对话框
 //            view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight() * 0.23f));
 //            Window dialogWindow = dialog.getWindow();
 //            WindowManager.LayoutParams lp = dialogWindow.getAttributes();
@@ -219,8 +223,6 @@ public class MainActivity extends AppCompatActivity{
 //            lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
 //            lp.gravity = Gravity.BOTTOM;
 //            dialogWindow.setAttributes(lp);
-
-            dialog.getWindow().setGravity(Gravity.BOTTOM);
 
             dialog.show();
         });
