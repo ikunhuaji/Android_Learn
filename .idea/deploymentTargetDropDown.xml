@@ -45,6 +45,9 @@
       <entry key="homework2">
         <State />
       </entry>
+      <entry key="jump">
+        <State />
+      </entry>
       <entry key="layout">
         <State />
       </entry>
@@ -52,6 +55,9 @@
         <State />
       </entry>
       <entry key="tablelayout">
+        <State />
+      </entry>
+      <entry key="thread">
         <State />
       </entry>
       <entry key="tread">

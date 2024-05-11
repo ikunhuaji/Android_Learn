@@ -18,9 +18,10 @@
             <option value="$PROJECT_DIR$/git" />
             <option value="$PROJECT_DIR$/homework1" />
             <option value="$PROJECT_DIR$/homework2" />
+            <option value="$PROJECT_DIR$/jump" />
             <option value="$PROJECT_DIR$/notification" />
             <option value="$PROJECT_DIR$/tablelayout" />
-            <option value="$PROJECT_DIR$/tread" />
+            <option value="$PROJECT_DIR$/thread" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
