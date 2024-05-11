@@ -45,7 +45,7 @@ public class StudentDetailActivity extends AppCompatActivity {
         btn_back.setOnClickListener(v->{
             //返回数据
             Intent back = new Intent();
-            back.putExtra("newStudentName",edt_student_name.getText());
+            back.putExtra("newStudentName",edt_student_name.getText().toString());
             setResult(201,back);//状态码，数据
             finish();
         });

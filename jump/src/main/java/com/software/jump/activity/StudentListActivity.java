@@ -27,8 +27,6 @@ public class StudentListActivity extends AppCompatActivity {
     private ActivityResultLauncher launcher;
     private ArrayAdapter<String> adapter;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,9 +93,6 @@ public class StudentListActivity extends AppCompatActivity {
                 launcher.launch(intent);
             }
         });
-
-
-
 
     }
 
