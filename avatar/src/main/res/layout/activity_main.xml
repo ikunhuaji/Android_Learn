@@ -7,7 +7,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_jump"
-        android:text="主界面跳转"/>
+        android:id="@+id/btn_open"
+        android:text="主界面跳转"
+        android:textSize="30sp"/>
 
 </LinearLayout>
