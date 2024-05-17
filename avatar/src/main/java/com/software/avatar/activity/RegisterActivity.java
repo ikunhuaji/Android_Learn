@@ -60,7 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void register(String phone, String password) {
         InputStream is = null;
         try{
-            URL url = new URL(HostUtil.HOST+"register?phone="+phone+"&password="+password);
+            URL url = new URL(HostUtil.HOST+"/register?phone="+phone+"&password="+password);
             is = url.openStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
             String json = br.readLine();
