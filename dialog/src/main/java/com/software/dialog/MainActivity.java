@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity{
             final boolean checkedItems[] = {true, false, true, false};//默认
             AlertDialog dialog = new AlertDialog.Builder(this)
                     .setIcon(R.mipmap.icon)//设置标题的图片
-                    .setTitle("多选对话框")//设置对话框的标题
+                    .setTitle("多选对话框")//设置对话框的标题b
                     .setMultiChoiceItems(items, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which, boolean isChecked) {
