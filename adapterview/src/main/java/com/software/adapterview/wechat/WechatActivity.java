@@ -44,7 +44,6 @@ public class WechatActivity extends AppCompatActivity {
 
         vp_contest.setAdapter(adapter);
 
-
         TabLayoutMediator mediator = new TabLayoutMediator(
                 tb_nav,
                 vp_contest,

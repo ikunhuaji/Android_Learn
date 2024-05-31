@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:id="@+id/iv_intro_image"
+        android:layout_gravity="center"
+        tools:src="@drawable/huawei"/>
+
+    <TextView
+        android:id="@+id/tv_intro_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:textSize="40sp"
+        tools:text="华为"
+        android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_intro_intro"
+        android:textSize="25sp"
+        android:gravity="left"
+        android:paddingLeft="10dp"
+        android:textColor="@drawable/gray"
+        tools:text="退货包运费 极速退款" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_intro_price"
+        android:textSize="30sp"
+        android:gravity="left"
+        android:paddingLeft="10dp"
+        android:textColor="@drawable/red"
+        tools:text="￥5999"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|center"
+
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_intro_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:textSize="20sp"
+            android:text="返回首页"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text=" — "
+            android:textSize="25sp"
+            android:id="@+id/tv_intro_reduce"/>
+        <EditText
+            android:id="@+id/edt_intro_cnt"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            tools:text="100"
+            android:maxLines="1"
+            android:maxEms="1"
+            android:ellipsize="end"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text=" + "
+            android:textSize="25sp"
+            android:id="@+id/tv_intro_add"/>
+        <Button
+            android:id="@+id/btn_intro_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp"
+            android:text="购买"/>
+    </LinearLayout>
+</LinearLayout>

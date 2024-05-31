@@ -1,4 +1,4 @@
-package com.software.homework2.main;
+package com.software.homework2.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

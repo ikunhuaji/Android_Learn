@@ -17,4 +17,5 @@
     <drawable name="red">#ffff0000</drawable>
     <drawable name="transparent">#00000000</drawable>
     <drawable name="yellow">#ffffff00</drawable>
+    <drawable name="orange">#FF7D00</drawable>
 </resources>

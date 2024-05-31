@@ -9,13 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Teach1">
         <activity
-            android:name=".activity.CartActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.IntroActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
