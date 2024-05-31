@@ -210,7 +210,7 @@ public class MainActivity extends AppCompatActivity{
             Dialog dialog = new Dialog(this, R.style.NormalDialogStyle);//设置自定义对话框样式，取消标题、边框，设置背景透明
             View view = View.inflate(this, R.layout.dialog_normal, null);//获取自定义布局
             dialog.setContentView(view);//绑定布局
-            dialog.setCanceledOnTouchOutside(true);//点击外部不关闭对话框
+            dialog.setCanceledOnTouchOutside(true);//false 点击外部不关闭对话框
 
             //通过 gravity 设置底部对话框
             dialog.getWindow().setGravity(Gravity.BOTTOM);
