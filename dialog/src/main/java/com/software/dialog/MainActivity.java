@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -212,7 +213,7 @@ public class MainActivity extends AppCompatActivity{
             dialog.setContentView(view);//绑定布局
             dialog.setCanceledOnTouchOutside(true);//false 点击外部不关闭对话框
 
-            //通过 gravity 设置底部对话框
+            //通过 获取屏幕尺寸 gravity 设置底部对话框
             dialog.getWindow().setGravity(Gravity.BOTTOM);
 
             //通过函数获取屏幕尺寸来设置底部对话框
@@ -224,7 +225,21 @@ public class MainActivity extends AppCompatActivity{
 //            lp.gravity = Gravity.BOTTOM;
 //            dialogWindow.setAttributes(lp);
 
+
+
             dialog.show();
+
+            Button btn_camera = view.findViewById(R.id.btn_camera);
+            Button btn_picture = view.findViewById(R.id.btn_picture);
+            Button btn_dialog_cancel = view.findViewById(R.id.btn_dialog_cancel);
+
+            btn_dialog_cancel.setOnClickListener(p->{
+                dialog.dismiss();
+            });
+
+            btn_camera.setOnClickListener(p->{
+                
+            });
         });
     }
 
