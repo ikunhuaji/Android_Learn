@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/avatar" />
             <option value="$PROJECT_DIR$/dialog" />
             <option value="$PROJECT_DIR$/git" />
+            <option value="$PROJECT_DIR$/glide" />
             <option value="$PROJECT_DIR$/homework1" />
             <option value="$PROJECT_DIR$/homework2and4" />
             <option value="$PROJECT_DIR$/homework3" />
@@ -24,6 +25,7 @@
             <option value="$PROJECT_DIR$/jump" />
             <option value="$PROJECT_DIR$/lifecycle" />
             <option value="$PROJECT_DIR$/notification" />
+            <option value="$PROJECT_DIR$/resources" />
             <option value="$PROJECT_DIR$/tablelayout" />
             <option value="$PROJECT_DIR$/thread" />
           </set>
