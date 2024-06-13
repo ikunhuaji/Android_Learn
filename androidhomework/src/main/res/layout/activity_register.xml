@@ -4,19 +4,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="20dp">
+    android:padding="30dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注册商店"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="@drawable/orange"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="请输入手机号"
-        android:id="@+id/edt_register_phone"/>
+        android:hint="请输入用户名"
+        android:id="@+id/edt_register_userName"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="请输入密码"
-        android:id="@+id/edt_register_password"/>
+        android:id="@+id/edt_register_pwd"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入邮箱"
+        android:id="@+id/edt_register_email"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入店铺名"
+        android:id="@+id/edt_register_storeName"/>
 
     <Button
         android:layout_width="match_parent"
@@ -27,6 +46,7 @@
         />
 
     <Button
+        android:layout_marginTop="20dp"
         android:id="@+id/btn_back_to_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

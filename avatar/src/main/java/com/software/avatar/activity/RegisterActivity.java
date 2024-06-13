@@ -26,6 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Button btn_register;
     private EditText edt_register_password;
     private EditText edt_register_phone;
+    private Button btn_back_to_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,10 @@ public class RegisterActivity extends AppCompatActivity {
 
             //接收结果
 
+        });
+
+        btn_back_to_login.setOnClickListener(v->{
+            gotoLogin();
         });
     }
 
@@ -115,5 +120,6 @@ public class RegisterActivity extends AppCompatActivity {
         edt_register_phone = findViewById(R.id.edt_register_phone);
         edt_register_password = findViewById(R.id.edt_register_password);
         btn_register = findViewById(R.id.btn_register);
+        btn_back_to_login = findViewById(R.id.btn_back_to_login);
     }
 }
