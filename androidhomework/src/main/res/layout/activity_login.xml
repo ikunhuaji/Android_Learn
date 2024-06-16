@@ -3,13 +3,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:padding="30dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textColor="@color/orange"
         android:text="登录界面"
         android:textSize="30sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入用户名"
+        android:id="@+id/edt_login_userName"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入密码"
+        android:id="@+id/edt_login_pwd"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:padding="10dp"
+        android:textSize="25sp"
+        android:background="@drawable/round_corner"
+        android:textColor="@color/white"
+        android:id="@+id/btn_login"
+        />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_back_to_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="返回注册界面"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:background="@drawable/round_corner"
+        android:textColor="@color/white"/>
 
 </LinearLayout>

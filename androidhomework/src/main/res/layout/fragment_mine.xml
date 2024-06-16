@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="个人信息"
+        android:textSize="30sp"
+        android:textColor="@color/orange"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_nickName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="小黑子"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:layout_width="400px"
+        android:layout_height="400px"
+        android:id="@+id/iv_avatar"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_nickName"
+        tools:background="@mipmap/ikun"
+        />
+
+    <TextView
+        android:id="@+id/tv_myName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="账号名："
+        android:textColor="@color/black"
+        android:layout_marginLeft="70dp"
+        android:textSize="25sp"
+        android:layout_below="@+id/iv_avatar"/>
+
+    <TextView
+        android:layout_below="@+id/iv_avatar"
+        android:layout_toRightOf="@+id/tv_myName"
+        android:id="@+id/tv_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="ikun"
+        android:textSize="25sp"
+        android:textColor="@drawable/gray"
+        android:layout_alignBaseline="@id/tv_myName"
+        />
+
+    <TextView
+        android:id="@+id/tv_myEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="邮箱："
+        android:textColor="@color/black"
+        android:layout_marginLeft="70dp"
+        android:textSize="25sp"
+        android:layout_below="@+id/tv_userName"/>
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="ikun@163.com"
+        android:textSize="25sp"
+        android:textColor="@drawable/gray"
+        android:layout_below="@+id/tv_userName"
+        android:layout_toRightOf="@+id/tv_myEmail"
+        android:layout_alignBaseline="@id/tv_myEmail"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_email"
+        android:layout_centerHorizontal="true"
+        android:text="更改个人信息"
+        android:background="@drawable/round_corner"
+        android:textColor="@color/white"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>

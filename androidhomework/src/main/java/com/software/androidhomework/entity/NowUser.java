@@ -1,19 +1,21 @@
 package com.software.androidhomework.entity;
 
-public class User {
-    private String userName;
-    private String pwd;
-    private String email;
-    private String nickName;
-    private int id;
-    private String avatar;
+public class NowUser {
+    public static String userName;
+    public static String pwd;
+    public static String email;
+    public static String nickName;
 
-    public User(String userName, String pwd, String email, String nickName,int id,String avatar) {
-        this.userName = userName;
-        this.pwd = pwd;
-        this.email = email;
-        this.nickName = nickName;
-        this.id=id;
+    public static int id;
+    public static String avatar;
+
+    public void update(User user) {
+        this.userName = user.getUserName();
+        this.pwd = user.getPwd();
+        this.email = user.getEmail();
+        this.nickName = user.getNickName();
+        this.id=user.getId();
+        this.avatar = user.getAvatar();
     }
 
     public String getUserName() {
@@ -56,11 +58,11 @@ public class User {
         this.id = id;
     }
 
-    public String getAvatar() {
+    public static String getAvatar() {
         return avatar;
     }
 
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
+    public static void setAvatar(String avatar) {
+        NowUser.avatar = avatar;
     }
 }

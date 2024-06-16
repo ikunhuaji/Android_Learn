@@ -8,13 +8,19 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
         android:text="登录"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:background="@drawable/round_corner"
+        android:textColor="@color/white"
         android:id="@+id/btn_to_login"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="注册"
+        android:padding="10dp"
+        android:background="@drawable/round_corner"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:id="@+id/btn_to_register"/>
 
