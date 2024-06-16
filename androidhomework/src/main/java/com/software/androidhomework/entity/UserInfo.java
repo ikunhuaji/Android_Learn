@@ -1,6 +1,6 @@
 package com.software.androidhomework.entity;
 
-public class NowUser {
+public class UserInfo {
     public static String userName;
     public static String pwd;
     public static String email;
@@ -63,6 +63,6 @@ public class NowUser {
     }
 
     public static void setAvatar(String avatar) {
-        NowUser.avatar = avatar;
+        UserInfo.avatar = avatar;
     }
 }

@@ -17,12 +17,14 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/username"
         android:hint="请输入用户名"
         android:id="@+id/edt_login_userName"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/pwd"
         android:hint="请输入密码"
         android:id="@+id/edt_login_pwd"/>
 

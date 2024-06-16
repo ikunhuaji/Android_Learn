@@ -14,6 +14,7 @@ public class User {
         this.email = email;
         this.nickName = nickName;
         this.id=id;
+        this.avatar=avatar;
     }
 
     public String getUserName() {

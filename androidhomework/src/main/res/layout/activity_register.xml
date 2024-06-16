@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="注册商店"
+        android:text="注册界面"
         android:gravity="center"
         android:textSize="30sp"
         android:textColor="@color/orange"/>

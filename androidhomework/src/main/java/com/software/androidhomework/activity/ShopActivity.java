@@ -12,6 +12,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import com.software.androidhomework.R;
 import com.software.androidhomework.adapters.ShopAdapter;
 import com.software.androidhomework.fragments.MineFragment;
+import com.software.androidhomework.fragments.ProductFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,9 +55,11 @@ public class ShopActivity extends AppCompatActivity {
 
     private void initFragments() {
         fragmentList = new ArrayList<>();
+        fragmentList.add(new ProductFragment());
         fragmentList.add(new MineFragment());
 
         tabNameList = new ArrayList<>();
+        tabNameList.add("商品");
         tabNameList.add("我的");
     }
 

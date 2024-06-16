@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.software.androidhomework.R;
-import com.software.androidhomework.entity.NowUser;
+import com.software.androidhomework.entity.UserInfo;
 import com.software.androidhomework.entity.Result;
 import com.software.androidhomework.entity.User;
 import com.software.androidhomework.utils.HostUtil;
@@ -80,7 +80,8 @@ public class LoginActivity extends AppCompatActivity {
                 });
             }else{
                 User user = (User) result.getData();
-                new NowUser().update(user);
+                UserInfo userInfo = new UserInfo();
+                userInfo.update(user);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
