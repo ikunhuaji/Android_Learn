@@ -14,7 +14,6 @@ import com.software.androidhomework.Dao.ProductDao;
 import com.software.androidhomework.R;
 import com.software.androidhomework.adapters.ProductAdapter;
 import com.software.androidhomework.entity.Product;
-import com.software.androidhomework.entity.ProductInfo;
 
 import java.util.List;
 
@@ -29,9 +28,7 @@ public class ProductFragment extends Fragment {
 
         GridView gv_product = view.findViewById(R.id.gv_product);
 
-        ProductDao.getProducts();
-
-        List<Product>products = ProductDao.products;
+        List<Product>products = ProductDao.getProducts();
 
         ProductAdapter adapter = new ProductAdapter(
             this.getContext(),

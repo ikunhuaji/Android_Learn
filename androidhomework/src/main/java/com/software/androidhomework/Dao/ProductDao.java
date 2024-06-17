@@ -3,9 +3,7 @@ package com.software.androidhomework.Dao;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.software.androidhomework.entity.Product;
-import com.software.androidhomework.entity.ProductInfo;
 import com.software.androidhomework.entity.Result;
-import com.software.androidhomework.entity.User;
 import com.software.androidhomework.utils.HostUtil;
 
 import java.io.BufferedReader;
@@ -18,9 +16,10 @@ import java.util.List;
 
 public class ProductDao {
     public static List<Product>products = new ArrayList<>();
-    public static void getProducts(){
-        products.clear();
 
+    //获取商品存货
+    public static List<Product> getProducts(){
+        products.clear();
         new Thread(){
             @Override
             public void run() {
@@ -31,14 +30,62 @@ public class ProductDao {
                     BufferedReader br = new BufferedReader(new InputStreamReader(is));
                     String json = br.readLine();
                     Gson gson = new Gson();
+                    Result result = gson.fromJson(json,new TypeToken<Result<List<Product>>>(){}.getType());
 
-                    Result result = gson.fromJson(json,new TypeToken<Result<ProductInfo>>(){}.getType());
+                    List<Product>productList = (List<Product>) result.getData();
 
-                    ProductInfo productInfo = (ProductInfo) result.getData();
-
-                    for(Product product:productInfo.products){
+                    for(Product product:productList){
                         products.add(product);
                     }
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }.start();
+
+        return products;
+    }
+
+    //增加商品存货
+    public static void addProduct(Product product,int cnt){
+        products.clear();
+        new Thread(){
+            @Override
+            public void run() {
+                String name = product.getName();
+
+                InputStream is = null;
+                try {
+                    URL url = new URL(HostUtil.HOST+"/addProduct?name="+name+"&cnt="+cnt);
+                    is=url.openStream();
+                    BufferedReader br = new BufferedReader(new InputStreamReader(is));
+                    String json = br.readLine();
+                    Gson gson = new Gson();
+                    Result result = gson.fromJson(json,new TypeToken<Result<List<Product>>>(){}.getType());
+
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }.start();
+    }
+
+    public static void reduceProduct(Product product,int cnt){
+        products.clear();
+
+        new Thread(){
+            @Override
+            public void run() {
+                String name = product.getName();
+                InputStream is = null;
+                try {
+                    URL url = new URL(HostUtil.HOST+"/reduceProduct?name="+name+"&cnt="+cnt);
+                    is=url.openStream();
+                    BufferedReader br = new BufferedReader(new InputStreamReader(is));
+                    String json = br.readLine();
+                    Gson gson = new Gson();
+                    Result result = gson.fromJson(json,new TypeToken<Result<List<Product>>>(){}.getType());
+
                 }catch (IOException e){
                     e.printStackTrace();
                 }

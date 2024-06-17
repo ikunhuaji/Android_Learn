@@ -80,8 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                 });
             }else{
                 User user = (User) result.getData();
-                UserInfo userInfo = new UserInfo();
-                userInfo.update(user);
+                UserInfo.update(user);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

@@ -8,9 +8,9 @@
     <ImageView
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:id="@+id/iv_intro_image"
+        android:id="@+id/iv_intro_img"
         android:layout_gravity="center"
-        tools:src="@drawable/huawei"/>
+        tools:src="@mipmap/cake"/>
 
     <TextView
         android:id="@+id/tv_intro_name"
@@ -18,27 +18,56 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:textSize="40sp"
-        tools:text="华为"
+        tools:text="水果蛋糕"
         android:textColor="@color/black"/>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_intro_intro"
-        android:textSize="25sp"
-        android:gravity="left"
-        android:paddingLeft="10dp"
-        android:textColor="@drawable/gray"
-        tools:text="退货包运费 极速退款" />
-    <TextView
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="价格:￥"
+            android:textSize="30sp"
+            android:textColor="@drawable/red"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_intro_price"
+            android:textSize="30sp"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:textColor="@drawable/red"
+            tools:text="5999"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_intro_price"
-        android:textSize="30sp"
-        android:gravity="left"
-        android:paddingLeft="10dp"
-        android:textColor="@drawable/red"
-        tools:text="￥5999"/>
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textColor="@drawable/gray"
+            android:text="存货:"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_intro_nowCnt"
+            android:textSize="25sp"
+            android:paddingLeft="10dp"
+            android:textColor="@drawable/gray"
+            tools:text="35" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,12 +76,15 @@
 
         android:orientation="horizontal">
         <Button
-            android:id="@+id/btn_intro_back"
+            android:id="@+id/btn_intro_cart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/round_corner"
             android:layout_marginRight="10dp"
             android:textSize="20sp"
-            android:text="返回首页"/>
+            android:text="加入购物车"
+            android:textColor="@color/white"
+            android:padding="10dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -82,6 +114,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:textSize="20sp"
-            android:text="购买"/>
+            android:text="购买"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:background="@drawable/round_corner"/>
     </LinearLayout>
+
 </LinearLayout>

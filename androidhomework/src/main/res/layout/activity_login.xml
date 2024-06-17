@@ -22,6 +22,7 @@
         android:id="@+id/edt_login_userName"/>
 
     <EditText
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@mipmap/pwd"

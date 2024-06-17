@@ -1,61 +1,60 @@
 package com.software.androidhomework.entity;
 
 public class UserInfo {
-    public static String userName;
-    public static String pwd;
-    public static String email;
-    public static String nickName;
+    private static String userName;
+    private static String pwd;
+    private static String email;
+    private static String nickName;
+    private static int id;
+    private static String avatar;
 
-    public static int id;
-    public static String avatar;
-
-    public void update(User user) {
-        this.userName = user.getUserName();
-        this.pwd = user.getPwd();
-        this.email = user.getEmail();
-        this.nickName = user.getNickName();
-        this.id=user.getId();
-        this.avatar = user.getAvatar();
+    public static void update(User user) {
+        UserInfo.userName = user.getUserName();
+        UserInfo.pwd = user.getPwd();
+        UserInfo.email = user.getEmail();
+        UserInfo.nickName = user.getNickName();
+        UserInfo.id=user.getId();
+        UserInfo.avatar = user.getAvatar();
     }
 
-    public String getUserName() {
+    public static String getUserName() {
         return userName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public static void setUserName(String userName) {
+        UserInfo.userName = userName;
     }
 
-    public String getPwd() {
+    public static String getPwd() {
         return pwd;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public static void setPwd(String pwd) {
+        UserInfo.pwd = pwd;
     }
 
-    public String getEmail() {
+    public static String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public static void setEmail(String email) {
+        UserInfo.email = email;
     }
 
-    public String getNickName() {
+    public static String getNickName() {
         return nickName;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public static void setNickName(String nickName) {
+        UserInfo.nickName = nickName;
     }
 
-    public int getId() {
+    public static int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public static void setId(int id) {
+        UserInfo.id = id;
     }
 
     public static String getAvatar() {

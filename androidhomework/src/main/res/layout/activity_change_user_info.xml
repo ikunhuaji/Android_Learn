@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="10dp"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用地址更改图片:"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/edt_change_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:singleLine="true"
+        android:textColor="@drawable/gray"
+        tools:text="123@163.com"
+        android:textSize="20sp"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        
+        <ImageView
+            android:id="@+id/iv_change_avatar"
+            android:layout_width="400px"
+            android:layout_height="400px"
+            tools:background="@mipmap/ikun"
+            android:layout_marginLeft="10dp"/>
+
+        <Button
+            android:id="@+id/btn_change_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预览图片"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:padding="10dp"
+            android:background="@drawable/round_corner"
+            android:layout_gravity="center"
+            android:layout_marginLeft="100dp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="昵称更改:"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/edt_change_nickName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:singleLine="true"
+        android:textColor="@drawable/gray"
+        tools:text="ikun"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="邮箱更改:"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/edt_change_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:singleLine="true"
+        android:textColor="@drawable/gray"
+        tools:text="ikun@123.com"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="密码更改:"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/edt_change_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:singleLine="true"
+        android:textColor="@drawable/gray"
+        tools:text="123456"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/btn_change_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="更改个人信息"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:background="@drawable/round_corner"
+        android:layout_marginTop="100dp"/>
+</LinearLayout>
