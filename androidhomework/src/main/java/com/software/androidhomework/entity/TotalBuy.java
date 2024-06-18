@@ -1,6 +1,8 @@
 package com.software.androidhomework.entity;
 
-public class TotalBuy {
+import java.io.Serializable;
+
+public class TotalBuy implements Serializable {
     private String userName;
     private String buyTime;
     private double totalPrice;

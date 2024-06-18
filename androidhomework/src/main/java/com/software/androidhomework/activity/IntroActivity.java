@@ -12,9 +12,15 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.software.androidhomework.Dao.BuyDao;
 import com.software.androidhomework.Dao.ProductDao;
+import com.software.androidhomework.Dao.TotalBuyDao;
 import com.software.androidhomework.R;
+import com.software.androidhomework.entity.Buy;
 import com.software.androidhomework.entity.Product;
+import com.software.androidhomework.entity.TotalBuy;
+import com.software.androidhomework.entity.UserInfo;
+import com.software.androidhomework.utils.DateMethod;
 
 public class IntroActivity extends AppCompatActivity {
 
@@ -31,6 +37,8 @@ public class IntroActivity extends AppCompatActivity {
     private Intent intent;
     private Product product;
     private int cnt;
+    private String userName;
+    private double totalPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,23 +87,49 @@ public class IntroActivity extends AppCompatActivity {
             }
         });
 
-        //?
+        //加入购物车 更新数据表 获取购物车数据 跳转购物车界面
         btn_intro_cart.setOnClickListener(v->{
 
         });
 
-        //?
+        //购买 更新总单 详情 库存 返回主界面
         btn_intro_buy.setOnClickListener(v->{
-            ProductDao.reduceProduct(product,cnt);
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    if(cnt>0){
+                        //库存减少
+                        ProductDao.reduceProduct(product,cnt);
 
+                        //添加总订单
+                        userName = UserInfo.getUserName();
+                        totalPrice = product.getPrice()*cnt;
+                        String buyTime = DateMethod.getDate();
 
+                        TotalBuy totalBuy = new TotalBuy(userName, buyTime,totalPrice);
+                        TotalBuyDao.addTotalBuy(totalBuy);
 
-            intent = new Intent(
-                    IntroActivity.this,
-                    ShopActivity.class
-            );
+                        //添加详情单
+                        Buy buy = new Buy(UserInfo.getUserName(),product.getName(),product.getPrice(),cnt,product.getImg(),buyTime);
+                        BuyDao.addBuy(buy);
+                    }
+                }
+            });
 
-            startActivity(intent);
+            thread.start();
+
+            try {
+                thread.join();
+
+                intent = new Intent(
+                        IntroActivity.this,
+                        ShopActivity.class
+                );
+
+                startActivity(intent);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         });
     }
 

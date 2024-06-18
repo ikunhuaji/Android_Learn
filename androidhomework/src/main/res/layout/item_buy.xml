@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        tools:src="@mipmap/cake"
+        android:id="@+id/iv_buy_img"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_buy_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="巧克力蛋糕"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="单价：￥"
+                android:textSize="20sp"
+                android:textColor="@drawable/red"/>
+
+            <TextView
+                android:id="@+id/tv_buy_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="103.5"
+                android:textColor="@drawable/red"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@drawable/gray"
+                android:text="数量："/>
+
+            <TextView
+                android:id="@+id/tv_buy_cnt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="20"
+                android:textSize="20sp"
+                android:textColor="@drawable/gray"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

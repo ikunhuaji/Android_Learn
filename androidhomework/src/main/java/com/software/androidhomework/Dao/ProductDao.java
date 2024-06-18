@@ -18,7 +18,7 @@ public class ProductDao {
     public static List<Product>products = new ArrayList<>();
 
     //获取商品存货
-    public static List<Product> getProducts(){
+    public static void getProducts(){
         products.clear();
         new Thread(){
             @Override
@@ -37,13 +37,18 @@ public class ProductDao {
                     for(Product product:productList){
                         products.add(product);
                     }
+
+//                    products.size();
+
                 }catch (IOException e){
                     e.printStackTrace();
                 }
             }
         }.start();
 
-        return products;
+//        products.size();
+
+//        return products;
     }
 
     //增加商品存货
@@ -68,8 +73,11 @@ public class ProductDao {
                 }
             }
         }.start();
+
+        getProducts();
     }
 
+    //减少库存
     public static void reduceProduct(Product product,int cnt){
         products.clear();
 

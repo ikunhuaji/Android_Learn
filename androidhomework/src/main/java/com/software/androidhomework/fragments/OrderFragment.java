@@ -1,5 +1,6 @@
 package com.software.androidhomework.fragments;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ import java.util.List;
 public class OrderFragment extends Fragment {
 
     private View view;
+    private List<TotalBuy> totalBuys;
 
     @Nullable
     @Override
@@ -29,7 +31,12 @@ public class OrderFragment extends Fragment {
 
         ListView lv_order = view.findViewById(R.id.lv_order);
 
-        List<TotalBuy> totalBuys = TotalBuyDao.getTotalBuys(UserInfo.getUserName());
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                totalBuys = TotalBuyDao.totalBuys;
+            }
+        });
 
         OrderAdapter adapter = new OrderAdapter(
                 this.getContext(),

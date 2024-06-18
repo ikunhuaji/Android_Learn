@@ -1,5 +1,6 @@
 package com.software.androidhomework.fragments;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import java.util.List;
 public class ProductFragment extends Fragment {
 
     private View view;
+    private List<Product> products;
 
     @Nullable
     @Override
@@ -28,7 +30,12 @@ public class ProductFragment extends Fragment {
 
         GridView gv_product = view.findViewById(R.id.gv_product);
 
-        List<Product>products = ProductDao.getProducts();
+        ((Activity)getContext()).runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                products = ProductDao.products;
+            }
+        });
 
         ProductAdapter adapter = new ProductAdapter(
             this.getContext(),

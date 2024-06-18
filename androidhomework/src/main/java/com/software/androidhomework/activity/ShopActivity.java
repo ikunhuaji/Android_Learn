@@ -9,8 +9,11 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.software.androidhomework.Dao.ProductDao;
+import com.software.androidhomework.Dao.TotalBuyDao;
 import com.software.androidhomework.R;
 import com.software.androidhomework.adapters.ShopAdapter;
+import com.software.androidhomework.entity.UserInfo;
 import com.software.androidhomework.fragments.MineFragment;
 import com.software.androidhomework.fragments.OrderFragment;
 import com.software.androidhomework.fragments.ProductFragment;
@@ -31,6 +34,28 @@ public class ShopActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shop);
 
         initViews();
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                ProductDao.getProducts();
+                TotalBuyDao.getTotalBuys(UserInfo.getUserName());
+            }
+        });
+
+        thread.start();
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+//        //等待线程更新
+//        try {
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
         initFragments();
 

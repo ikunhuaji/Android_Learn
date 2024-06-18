@@ -1,21 +1,27 @@
 package com.software.androidhomework.adapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.software.androidhomework.Dao.BuyDao;
 import com.software.androidhomework.R;
+import com.software.androidhomework.activity.BuyIntroActivity;
 import com.software.androidhomework.entity.TotalBuy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrderAdapter extends BaseAdapter {
     private Context context;
     private Integer layoutId;
-    private List<TotalBuy>totalBuys;
+    private List<TotalBuy>totalBuys = new ArrayList<>();
 
     public OrderAdapter(Context context, Integer layoutId, List<TotalBuy> totalBuys) {
         this.context = context;
@@ -53,7 +59,23 @@ public class OrderAdapter extends BaseAdapter {
         tv_order_totalPrice.setText(String.valueOf(totalBuy.getTotalPrice()));
 
         convertView.setOnClickListener(v->{
+            Intent intent = new Intent(
+                    parent.getContext(),
+                    BuyIntroActivity.class
+            );
 
+            ((Activity)context).runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    BuyDao.getBuys(totalBuy.getUserName(),totalBuy.getBuyTime());
+                }
+            });
+
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("totalBuy",totalBuy);
+            intent.putExtras(bundle);
+
+            parent.getContext().startActivity(intent);
         });
 
         return convertView;

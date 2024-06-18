@@ -75,7 +75,7 @@ public class ChangeUserInfoActivity extends AppCompatActivity {
                     int id = UserInfo.getId();
                     String avatar = edt_change_avatar.getText().toString();
 
-                    System.out.println(avatar);
+//                    System.out.println(avatar);
 
                     if(avatar==null||avatar.equals(""))avatar=UserInfo.getAvatar();
                     if(nickName==null||nickName.equals(""))nickName=UserInfo.getNickName();

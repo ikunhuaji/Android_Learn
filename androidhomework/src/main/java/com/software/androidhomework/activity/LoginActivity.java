@@ -10,10 +10,13 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.software.androidhomework.Dao.ProductDao;
+import com.software.androidhomework.Dao.TotalBuyDao;
 import com.software.androidhomework.R;
 import com.software.androidhomework.entity.UserInfo;
 import com.software.androidhomework.entity.Result;
 import com.software.androidhomework.entity.User;
+import com.software.androidhomework.fragments.OrderFragment;
 import com.software.androidhomework.utils.HostUtil;
 
 import java.io.BufferedReader;
@@ -99,6 +102,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void gotoShop() {
+
+//        ProductDao.getProducts();
+//        TotalBuyDao.getTotalBuys(UserInfo.getUserName());
+
         Intent intent = new Intent(
                 LoginActivity.this,
                 ShopActivity.class

@@ -71,15 +71,13 @@ public class ProductAdapter extends BaseAdapter {
         tv_product_nowCnt.setText(String.valueOf(product.getNowCnt()));
 
         convertView.setOnClickListener(v->{
-            Product productTmp = new Product(product.getName(),product.getPrice(),product.getNowCnt(),product.getImg());
-
             Intent intent = new Intent(
                     parent.getContext(),
                     IntroActivity.class
             );
 
             Bundle bundle = new Bundle();
-            bundle.putSerializable("product",productTmp);
+            bundle.putSerializable("product",product);
 
             intent.putExtras(bundle);
             parent.getContext().startActivity(intent);
