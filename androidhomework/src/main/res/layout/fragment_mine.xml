@@ -79,16 +79,29 @@
         />
 
     <Button
-        android:id="@+id/btn_change_info"
+        android:id="@+id/btn_mine_cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_email"
+        android:layout_centerHorizontal="true"
+        android:text="购物车"
+        android:background="@drawable/round_corner"
+        android:textColor="@color/white"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:layout_marginTop="100dp"/>
+
+    <Button
+        android:id="@+id/btn_change_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_mine_cart"
         android:layout_centerHorizontal="true"
         android:text="更改个人信息"
         android:background="@drawable/round_corner"
         android:textColor="@color/white"
         android:padding="10dp"
         android:textSize="20sp"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="30dp"/>
 
 </RelativeLayout>

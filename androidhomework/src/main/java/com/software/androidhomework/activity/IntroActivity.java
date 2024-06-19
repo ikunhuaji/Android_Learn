@@ -91,9 +91,38 @@ public class IntroActivity extends AppCompatActivity {
 
         //加入购物车 更新数据表 获取购物车数据 跳转购物车界面
         btn_intro_cart.setOnClickListener(v->{
-            CartDao.addCart(new Cart(UserInfo.getUserName(),product.getName(),product.getPrice(),cnt,product.getImg()));
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    CartDao.addCart(new Cart(UserInfo.getUserName(),product.getName(),product.getPrice(),cnt,product.getImg()));
+                }
+            });
 
+            thread.start();
 
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(
+                            IntroActivity.this,
+                            "添加购物车成功",
+                            Toast.LENGTH_SHORT
+                    ).show();
+                }
+            });
+
+            intent = new Intent(
+                    IntroActivity.this,
+                    CartActivity.class
+            );
+
+            startActivity(intent);
         });
 
         //购买 更新总单 详情 库存 返回主界面
@@ -124,6 +153,17 @@ public class IntroActivity extends AppCompatActivity {
 
             try {
                 thread.join();
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(
+                                IntroActivity.this,
+                                "购买成功",
+                                Toast.LENGTH_SHORT
+                        ).show();
+                    }
+                });
 
                 intent = new Intent(
                         IntroActivity.this,

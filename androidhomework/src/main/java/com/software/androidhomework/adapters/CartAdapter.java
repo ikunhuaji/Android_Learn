@@ -1,5 +1,6 @@
 package com.software.androidhomework.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,9 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.software.androidhomework.Dao.CartDao;
 import com.software.androidhomework.R;
 import com.software.androidhomework.entity.Cart;
+import com.software.androidhomework.entity.UserInfo;
+
+import java.util.List;
 
 public class CartAdapter extends BaseAdapter {
     private Context context;
@@ -70,17 +74,94 @@ public class CartAdapter extends BaseAdapter {
 
         //添加
         tv_cart_add.setOnClickListener(v->{
+            int cnt = cart.getCnt()+1;
 
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    CartDao.addCartCnt(cart);
+                }
+            });
+
+            thread.start();
+
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            CartDao.carts.get(position).setCnt(cnt);
+
+            notifyDataSetChanged();
         });
 
         //减少
         tv_cart_reduce.setOnClickListener(v->{
+            int cnt = cart.getCnt()-1;
+            if(cnt==0){
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        CartDao.deleteCart(UserInfo.getUserName(),cart.getName());
+                    }
+                });
 
+                thread.start();
+
+                try {
+                    thread.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                CartDao.deleteCart(UserInfo.getUserName(),cart.getName());
+
+                CartDao.delete(cart);
+
+                notifyDataSetChanged();
+            }else {
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        CartDao.reduceCartCnt(cart);
+                    }
+                });
+
+                thread.start();
+
+                try {
+                    thread.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                CartDao.carts.get(position).setCnt(cnt);
+
+                notifyDataSetChanged();
+            }
         });
 
         //删除
         btn_cart_delete.setOnClickListener(v->{
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    CartDao.deleteCart(UserInfo.getUserName(),cart.getName());
+                }
+            });
 
+            thread.start();
+
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            CartDao.delete(cart);
+
+            notifyDataSetChanged();
         });
 
         return convertView;

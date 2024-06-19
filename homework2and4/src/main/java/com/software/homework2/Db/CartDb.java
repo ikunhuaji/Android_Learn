@@ -66,7 +66,6 @@ public class CartDb {
                 sum+=it.cnt*it.product.getPrice();
             }
         }
-
         return sum;
     }
 }

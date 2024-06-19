@@ -16,9 +16,12 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.software.androidhomework.Dao.CartDao;
 import com.software.androidhomework.R;
+import com.software.androidhomework.activity.CartActivity;
 import com.software.androidhomework.activity.ChangeUserInfoActivity;
 import com.software.androidhomework.activity.ShopActivity;
+import com.software.androidhomework.entity.Cart;
 import com.software.androidhomework.entity.UserInfo;
 
 public class MineFragment extends Fragment {
@@ -29,6 +32,7 @@ public class MineFragment extends Fragment {
     private ImageView iv_avatar;
     private TextView tv_userName;
     private TextView tv_email;
+    private Button btn_mine_cart;
 
     @Nullable
     @Override
@@ -51,6 +55,16 @@ public class MineFragment extends Fragment {
 
             startActivity(intent);
         });
+
+        btn_mine_cart.setOnClickListener(v->{
+
+            Intent intent = new Intent(
+                    getContext(),
+                    CartActivity.class
+            );
+
+            startActivity(intent);
+        });
     }
 
     private void initViews() {
@@ -58,6 +72,7 @@ public class MineFragment extends Fragment {
         iv_avatar = view.findViewById(R.id.iv_avatar);
         tv_userName = view.findViewById(R.id.tv_userName);
         tv_email = view.findViewById(R.id.tv_email);
+        btn_mine_cart = view.findViewById(R.id.btn_mine_cart);
         btn_change = view.findViewById(R.id.btn_change_info);
 
         tv_nickName.setText(UserInfo.getNickName());

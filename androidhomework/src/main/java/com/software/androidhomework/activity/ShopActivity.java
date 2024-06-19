@@ -50,12 +50,12 @@ public class ShopActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-//        //等待线程更新
-//        try {
-//            Thread.sleep(2000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        //添加时间等待线程更新
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         initFragments();
 

@@ -62,7 +62,17 @@
             android:textColor="@drawable/white"
             android:layout_alignParentRight="true"
             android:text="购买"/>
-
+        <Button
+            android:id="@+id/btn_cart_back"
+            android:layout_below="@+id/btn_cart_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="返回商品页"
+            android:textSize="20sp"
+            android:background="@drawable/round_corner"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
     </RelativeLayout>
 
 </RelativeLayout>
