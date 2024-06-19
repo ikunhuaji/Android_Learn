@@ -13,10 +13,12 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.software.androidhomework.Dao.BuyDao;
+import com.software.androidhomework.Dao.CartDao;
 import com.software.androidhomework.Dao.ProductDao;
 import com.software.androidhomework.Dao.TotalBuyDao;
 import com.software.androidhomework.R;
 import com.software.androidhomework.entity.Buy;
+import com.software.androidhomework.entity.Cart;
 import com.software.androidhomework.entity.Product;
 import com.software.androidhomework.entity.TotalBuy;
 import com.software.androidhomework.entity.UserInfo;
@@ -89,6 +91,8 @@ public class IntroActivity extends AppCompatActivity {
 
         //加入购物车 更新数据表 获取购物车数据 跳转购物车界面
         btn_intro_cart.setOnClickListener(v->{
+            CartDao.addCart(new Cart(UserInfo.getUserName(),product.getName(),product.getPrice(),cnt,product.getImg()));
+
 
         });
 

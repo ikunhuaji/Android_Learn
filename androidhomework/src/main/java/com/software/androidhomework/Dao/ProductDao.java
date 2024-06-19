@@ -16,6 +16,7 @@ import java.util.List;
 
 public class ProductDao {
     public static List<Product>products = new ArrayList<>();
+    private static int nowCnt;
 
     //获取商品存货
     public static void getProducts(){
@@ -53,7 +54,6 @@ public class ProductDao {
 
     //增加商品存货
     public static void addProduct(Product product,int cnt){
-        products.clear();
         new Thread(){
             @Override
             public void run() {
@@ -73,14 +73,10 @@ public class ProductDao {
                 }
             }
         }.start();
-
-        getProducts();
     }
 
     //减少库存
     public static void reduceProduct(Product product,int cnt){
-        products.clear();
-
         new Thread(){
             @Override
             public void run() {
@@ -99,5 +95,31 @@ public class ProductDao {
                 }
             }
         }.start();
+    }
+
+    //获取特定商品库存
+    public static int getNowCnt(String name){
+        nowCnt = 0;
+        new Thread(){
+            @Override
+            public void run() {
+                InputStream is = null;
+                try {
+                    URL url = new URL(HostUtil.HOST+"/getNowCnt?name="+name);
+                    is=url.openStream();
+                    BufferedReader br = new BufferedReader(new InputStreamReader(is));
+                    String json = br.readLine();
+                    Gson gson = new Gson();
+                    Result result = gson.fromJson(json,new TypeToken<Result<Integer>>(){}.getType());
+
+                    nowCnt = (int) result.getData();
+
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }.start();
+
+        return nowCnt;
     }
 }
