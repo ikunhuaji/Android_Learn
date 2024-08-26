@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:gravity="left"
+        android:id="@+id/root">
+        <TextView
+            android:text="passwordaaa"
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_toStartOf="@+id/iv_icon"
+            android:layout_centerVertical="true"
+            />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:id="@+id/iv_icon"
+            android:layout_marginStart="4dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/wrong"/>
+    </RelativeLayout>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="now"
+        android:layout_below="@+id/root"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:id="@+id/edt_string"/>
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/root"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/edt_string"
+        android:text="确认"
+        android:id="@+id/btn_check"
+        android:textSize="10sp" />
+</RelativeLayout>
