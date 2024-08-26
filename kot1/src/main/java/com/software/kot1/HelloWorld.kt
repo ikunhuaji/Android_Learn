@@ -20,6 +20,22 @@ fun change2(x: Int) = when(x){
     else -> "非法"//没有 else 会报错
 }
 
+fun getScore(name: String) = when {//写法2
+    name == "Tom"  -> "不及格"
+    name == "Jim" -> "及格"
+    name == "Pony" -> "良好"
+    name == "Tony" -> "优秀"
+    else -> "名字非法"
+}
+
+fun check(num:Number){//when判断数据类型
+    when(num){
+        is Int -> println("Int")
+        is Double -> println("Double")
+        else -> print("others")
+    }
+}
+
 fun main(){
 //    println("Hello World!")
 
