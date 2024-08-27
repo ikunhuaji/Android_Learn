@@ -11,9 +11,14 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences preferences;
     private Button btn_save;
     private Button btn_sd;
+    private Button btn_sd_picture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
             edt_password.setText(preferences.getString("password",""));
         }
 
-        if(autoLogin){
+        if(autoLogin) {
             //模拟登录逻辑
-            Toast.makeText(this,"自动登录成功",Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "自动登录成功", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -106,11 +112,83 @@ public class MainActivity extends AppCompatActivity {
 
             //存在sd卡
             if(storageState.equals(Environment.MEDIA_MOUNTED)){
-                //获取sd卡存文件的目录
+                //获取sd卡存文件的目录,自定义txtFile目录
+                String path = getExternalFilesDir(null).getAbsolutePath() + "/txtFile";
 
+                //文件夹目录
+                File file = new File(path);
+
+                //判断文件夹是否存在
+                if(!file.exists()){
+                    file.mkdir();//新建
+                }
+
+                //开始写文件
+                try {
+                    FileOutputStream fos = new FileOutputStream(path+"test.txt");
+                    fos.write("What can I say?".getBytes());
+                    fos.flush();
+                    fos.close();
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+
+                Toast.makeText(this,"写入sd成功",Toast.LENGTH_LONG).show();
             }
             else{
+                Toast.makeText(this,"不存在sd卡",Toast.LENGTH_LONG).show();
+            }
+        });
 
+        btn_sd_picture.setOnClickListener(v->{
+            //判断是否存在sd卡
+            String storageState = Environment.getExternalStorageState();
+
+            //存在sd卡
+            if(storageState.equals(Environment.MEDIA_MOUNTED)){
+                //获取sd卡存文件的目录,自定义txtFile目录
+                String path = getExternalFilesDir(null).getAbsolutePath() + "/pictureFile";
+
+                //文件夹目录
+                File file = new File(path);
+
+                //判断文件夹是否存在
+                if(!file.exists()){
+                    file.mkdir();//新建
+                }
+
+                try {
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            //开始写文件
+                            try {
+                                FileOutputStream fos = new FileOutputStream(path + "ikun.jpg");
+
+                                URL url = new URL("https://img1.baidu.com/it/u=1968668429,2104382916&fm=253&fmt=auto&app=138&f=JPEG?w=507&h=500");
+                                URLConnection connection = (HttpURLConnection) url.openConnection();
+                                InputStream is = connection.getInputStream();
+
+                                byte[] cache = new byte[1024];
+                                int len;
+                                while ((len = is.read(cache)) > 0) {
+                                    fos.write(cache, 0, len);
+                                }
+
+                                is.close();
+                                fos.flush();
+                                fos.close();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }).start();
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+                Toast.makeText(this,"写入sd图片成功",Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -128,5 +206,6 @@ public class MainActivity extends AppCompatActivity {
         btn_login = findViewById(R.id.btn_login);
         btn_save = findViewById(R.id.btn_save);
         btn_sd = findViewById(R.id.btn_sd);
+        btn_sd_picture = findViewById(R.id.btn_sd_picture);
     }
 }

@@ -1,4 +1,4 @@
-package com.software.kot1
+package com.software.kot1.demo1
 
 fun add(a:Int,b:Int):Int{
     return  a+b

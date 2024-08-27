@@ -60,6 +60,13 @@
         android:text="写入 sd"
         android:textSize="20sp"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_sd_picture"
+        android:text="写入 sd 图片"
+        android:textSize="20sp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
