@@ -1,4 +1,4 @@
-package com.software.kot1.demo1
+package com.software.kot1.demo_and_class
 
 fun main(){
     var range = 0..10//range为区间 [0,10]
