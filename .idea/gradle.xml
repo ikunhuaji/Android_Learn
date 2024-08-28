@@ -30,6 +30,7 @@
             <option value="$PROJECT_DIR$/notification" />
             <option value="$PROJECT_DIR$/resources" />
             <option value="$PROJECT_DIR$/shared" />
+            <option value="$PROJECT_DIR$/sqlite" />
             <option value="$PROJECT_DIR$/tablelayout" />
             <option value="$PROJECT_DIR$/thread" />
           </set>

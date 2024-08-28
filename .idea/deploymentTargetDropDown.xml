@@ -5,12 +5,6 @@
       <entry key="0806">
         <State />
       </entry>
-      <entry key="ArrayAdapterActivity">
-        <State />
-      </entry>
-      <entry key="MainActivity">
-        <State />
-      </entry>
       <entry key="Relativelayout">
         <State />
       </entry>
@@ -76,6 +70,9 @@
         <State />
       </entry>
       <entry key="shared">
+        <State />
+      </entry>
+      <entry key="sqlite">
         <State />
       </entry>
       <entry key="tablelayout">

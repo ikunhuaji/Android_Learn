@@ -1,5 +1,7 @@
 package com.software.kot1.demo_and_class
 
+import com.software.kot1.demo_interface.Study
+
 //test1
 //class Student : Person() {
 //    var number = ""
@@ -33,7 +35,7 @@ package com.software.kot1.demo_and_class
 //    var grade : Int = grade+1
 //}
 
-//test3
+//test3 无主构造
 //class Student : Person{
 //    constructor(name:String,age:Int,number: String):super(name,age){
 //
@@ -47,3 +49,15 @@ package com.software.kot1.demo_and_class
 //        //因为number不是主构造参数
 //    }
 //}
+
+//test4 使用接口
+class Student(name:String,age:Int,var number: String,var grade:Int):Person(name,age),Study{
+    override fun study() {//实现接口抽象方法
+        println("study")
+    }
+
+    override fun readBooks() {}
+
+    override fun doHomework() {}
+
+}
