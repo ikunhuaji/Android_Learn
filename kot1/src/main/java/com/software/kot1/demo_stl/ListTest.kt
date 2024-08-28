@@ -1,5 +1,7 @@
 package com.software.kot1.demo_stl
 
+import androidx.compose.ui.text.toUpperCase
+
 fun main(){
     //无参创建
     var lsit = ArrayList<Int>()
@@ -21,12 +23,28 @@ fun main(){
     }
 
     //lambda 查询长度最大的元素
-    var strlist = listOf<String>("a","ab","aab","abc")
+    var strList = listOf<String>("a","ab","aab","abc")
     var lambda = {str:String -> str.length}
-    var maxn1 = strlist.maxBy(lambda)
+    var maxn1 = strList.maxBy(lambda)
 
     //lambda 查询大小最大 , 省略写法
-    var maxn2 = strlist.maxBy{it}
+    var maxn2 = strList.maxBy{it}
 
     println(maxn1 + " " + maxn2)
+
+    // map 映射 , 小写转大写
+    var newList = strList.map{ it.toUpperCase() }
+    println(newList)
+
+    // filter 过滤 , 筛出长度>=3的元素
+    newList = strList.filter { it.length >= 3 }
+    println(newList)
+
+    // any 返回boolen , 是否存在满足条件元素
+    var isAny = strList.any { it.length>3 }
+    println(isAny)
+
+    // all 返回boolen , 是否所有元素都满足条件
+    var isAll = strList.all { it >= "a" }
+    println(isAll)
 }
