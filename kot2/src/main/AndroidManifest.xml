@@ -9,10 +9,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Teach1">
         <activity
-            android:name=".demo_second.android_1.MainActivity2"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Teach1">
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
