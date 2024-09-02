@@ -80,8 +80,8 @@ public class UserDBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         //数据库版本变化时，应用程序安装执行此方法
         //更新数据库结构
-//        String sql = "ALTER TABLE " + TABLE_NAME + " ADD COLUMN phone VARCHAR;";
-//        execSql(sql);
+        String sql = "ALTER TABLE " + TABLE_NAME + " ADD COLUMN phone VARCHAR;";
+        db.execSQL(sql);
     }
 
     public long insert(UserInfo userInfo){
