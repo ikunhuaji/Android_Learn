@@ -12,7 +12,7 @@ package com.software.kot1.demo_first.demo_and_class
 //test2
 open class Person(var name:String,var age:Int){//主构造写法
     init {//主构造处理
-        println("name is"+name)
-        println("age is"+age)
+//        println("name is "+name)
+//        println("age is "+age)
     }
 }

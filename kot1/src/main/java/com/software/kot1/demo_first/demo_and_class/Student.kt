@@ -51,13 +51,15 @@ import com.software.kot1.demo_first.demo_interface.Study
 //}
 
 //test4 使用接口
-class Student(name:String,age:Int,var number: String,var grade:Int): Person(name,age), Study {
+class Student(name:String,age:Int,var number: String = "123",var grade:Int = 23): Person(name,age), Study {
     override fun study() {//实现接口抽象方法
         println("study")
     }
 
     override fun readBooks() {}
 
-    override fun doHomework() {}
+    override fun doHomework() {
+        println("do homework")
+    }
 
 }
