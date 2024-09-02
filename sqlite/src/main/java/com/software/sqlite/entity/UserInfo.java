@@ -7,13 +7,15 @@ public class UserInfo {
     private Integer height;
     private Float weight;
 
-//    public UserInfo(Integer id, String name, Integer age, Integer height, Float weight) {
-//        this.id = id;
-//        this.name = name;
-//        this.age = age;
-//        this.height = height;
-//        this.weight = weight;
-//    }
+    public UserInfo(){}
+
+    public UserInfo(Integer id, String name, Integer age, Integer height, Float weight) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.height = height;
+        this.weight = weight;
+    }
 
     public Integer getId() {
         return id;
@@ -53,5 +55,16 @@ public class UserInfo {
 
     public void setWeight(Float weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return "UserInfo{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", height=" + height +
+                ", weight=" + weight +
+                '}';
     }
 }

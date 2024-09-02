@@ -3,10 +3,13 @@ package com.software.sqlite;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.software.sqlite.activity.UserInfoActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
             String desc = String.format("数据库%s创建%s",db.getPath(),(db!=null)?"成功":"失败");
 
             tv_desc.setText(desc);
+
+            startActivity(new Intent(this, UserInfoActivity.class));
         });
 
         //删除数据库

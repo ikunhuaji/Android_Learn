@@ -9,6 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Teach1">
         <activity
+
             android:name=".MainActivity"
             android:exported="true" />
         <activity
