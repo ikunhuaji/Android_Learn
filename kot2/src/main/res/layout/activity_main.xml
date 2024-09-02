@@ -13,12 +13,32 @@
         android:text="Hello World"
         android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/btn_submit"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="提交"
-        android:textSize="20sp" />
+        android:gravity="center">
+        <EditText
+            android:id="@+id/edt_image"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="20sp"
+            android:hint="输入图片地址"/>
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:text="提交"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/iv_submit"
+        />
 
 </LinearLayout>

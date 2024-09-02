@@ -28,6 +28,7 @@ public class UserInfoActivity extends AppCompatActivity {
     private EditText edt_delete_id;
     private Button btn_delete_id;
     private Button btn_update;
+    private UserInfo userInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
