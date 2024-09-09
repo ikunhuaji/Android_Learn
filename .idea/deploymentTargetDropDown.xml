@@ -42,6 +42,9 @@
       <entry key="avatar">
         <State />
       </entry>
+      <entry key="content-cilent">
+        <State />
+      </entry>
       <entry key="dialog">
         <State />
       </entry>
