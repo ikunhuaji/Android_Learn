@@ -45,6 +45,9 @@
       <entry key="content-cilent">
         <State />
       </entry>
+      <entry key="content-server">
+        <State />
+      </entry>
       <entry key="dialog">
         <State />
       </entry>
